@@ -6,6 +6,8 @@ Repositório com projeto rodando em VSCodium visando a emulação FreeRTOS em um
 
 https://www.youtube.com/playlist?list=PLz0hIwgFVASm4w3fn6mCc_3MVlOj31aSb
 
+
+<p align="center">
                             ..                             
                       . .-%@@*.                           
                      +@%@@@@@@#                           
@@ -47,6 +49,5 @@ https://www.youtube.com/playlist?list=PLz0hIwgFVASm4w3fn6mCc_3MVlOj31aSb
                            :          %@@@@@@=            
                                       .%@@@@@=            
                                         #@@@#.            
-                                         :::                                         
-                                                                                                
-                                                                           
+                                         :::                                            
+</p>                                                                           
