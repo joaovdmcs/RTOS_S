@@ -16,7 +16,7 @@ int main(void)
     configASSERT(status == pdPASS);
     status = xTaskCreate(task2_handler, "Task 2", 200, "Hello world from Task-2", 2, &task2_handle);
     configASSERT(status == pdPASS);
-    vTaskStartScheduler();
+    // vTaskStartScheduler() scheduler padrao
 
     return 0;
 }
