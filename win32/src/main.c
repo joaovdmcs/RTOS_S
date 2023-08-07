@@ -1,34 +1,38 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-void vTask1(void *pvParameters);
-void vTask2(void *pvParameters);
+
+static void task1_handler(void* parameters);
+static void task2_handler(void* parameters);
+
 
 int main(void)
 {
-    xTaskCreate(&vTask1, "Task 1", 1024, NULL, 1, NULL);
-    xTaskCreate(&vTask2, "Task 2", 1024, NULL, 1, NULL);
+    TaskHandle_t task1_handle;
+    TaskHandle_t task2_handle;
+    BaseType_t status;
 
+    status = xTaskCreate(task1_handler, "Task 1", 200, "Hello world from Task-1", 2, &task1_handle);
+    configASSERT(status == pdPASS);
+    status = xTaskCreate(task2_handler, "Task 2", 200, "Hello world from Task-2", 2, &task2_handle);
+    configASSERT(status == pdPASS);
     vTaskStartScheduler();
 
     return 0;
 }
 
-void vTask1(void *pvParameters)
-{
-    for (;;)
-    {
-        printf("Task 1\r\n");
-        vTaskDelay(pdMS_TO_TICKS(1000));
-    }
+static void task1_handler(void* parameters)
+{ /*
+   for ( ;; ){
+    printf("Ola mundo de Task-1\n");
+    vTaskDelay(pdMS_TO_TICKS(500));
+   }
+   */
 }
 
-void vTask2(void *pvParameters)
+static void task2_handler(void* parameters)
 {
-    for (;;)
-    {
-        printf("Task 2\r\n");
-        vTaskDelay(pdMS_TO_TICKS(1000));
-    }
+    
+    
 }
 
